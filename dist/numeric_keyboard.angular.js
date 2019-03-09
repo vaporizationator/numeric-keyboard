@@ -1079,8 +1079,13 @@ var Mixins = {
     }, function (keyboard) {
       return _this3.set('keyboard', keyboard);
     });
+
+    function ease(t) {
+      return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t;
+    }
+
     Object(_utils_animate_js__WEBPACK_IMPORTED_MODULE_4__["animate"])(function (timestamp, frame, frames) {
-      elKeyboard.style.transform = "translateY(".concat((frames - frame) / frames * 100, "%)");
+      elKeyboard.style.transform = "translateY(".concat(ease((frames - frame) / frames) * 100, "%)");
     }, function () {}, 10);
     this.set('keyboardElement', elKeyboard);
     this.set('cursorActive', true);
