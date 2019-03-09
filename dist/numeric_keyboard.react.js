@@ -2871,6 +2871,7 @@ var Mixins = {
       return;
     }
 
+    this.dispatch('onFocusStart');
     var elContainer = document.createElement('div');
     var elShadow = document.createElement('div');
     var elKeyboard = document.createElement('div');
