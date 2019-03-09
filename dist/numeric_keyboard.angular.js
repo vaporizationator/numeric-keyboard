@@ -978,6 +978,10 @@ var Mixins = {
             return;
           }
 
+          if (newValue.length > maxlength) {
+            return;
+          }
+
           newValue = parseFloat(newValue, 10);
 
           if (isNaN(newValue)) {
